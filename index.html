@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>DOM:</h1>
+    <button onclick="changeMyself()">Click Me</button>
+    <div id="result"></div>
+    <!-- //js id ke through element ko catch kar sakta ha 
+        ye is liye bnaya js ko aik jagah chahiye jahan output show kare -->
+        
+    <script>
+        function changeMyself()
+        {
+        // alert ("I am running")
+        //  document.write("I am Working")
+        // jab button click ke bad document.write chalta ha to pura html page erase ho jata ha
+        // or i am working likha hoa ata ha bss
+        //document.write real website men use ni hota ye page destroy karta ha
+        //  kunkay ye page replace kar deta ha
+const divRef =document.querySelector("#result")
+divRef.innerHTML ="Hi I am  Syeda Khadija and i changed it"//div ke ander content change karna bina page destroy kiye
+      }
+</script>
+ 
+    <button onclick ="increment()">Increment</button>
+    <button onclick ="decrement()">Decrement</button>
+    <div id ="counter">-5</div>
+<script>
+        function increment()
+        {
+const counterRef =document.querySelector("#counter")
+// console.log(typeof counterRef.innerHTML)
+const currentCounter = Number(counterRef.innerHTML)
+counterRef.innerHTML = currentCounter+1
+        }
+        function decrement()
+        {
+const counterRef = document.querySelector("#counter")
+const currentCounter = Number(counterRef.innerHTML)
+counterRef.innerHTML = currentCounter-1
+        }
+ </script>
+
+
+    <form onsubmit="checkWeather();return false;"><!-- pagr refresh ni ho ga -->
+           
+<div>
+    <label for="cityName">City*</label>
+    <input type="text" name="cityName" id="cityName">
+</div>
+<button>Submit</button>
+    </form>
+    <div id ="weather"></div>
+    <script>
+        function checkWeather()
+        {
+             // alert("I am submitted")
+            const cityRef= document.querySelector("#cityName")
+            const city = cityRef.value
+            // alert ("city")
+            const weatherRef= document.querySelector("#weather")
+            weatherRef . innerHTML = city + "Weather is 10 Degree Celcius"
+        }
+        // Logical Operators
+        const domicile ="lahore"
+        const age = 30
+        if(domicile==="lahore" && age <=30)
+        {
+            console.log("runned")
+        }
+        const CNIC ="Multan"
+        const ages = 30
+        if(CNIC==="lahore" || age <=30)
+        {
+            console.log("runned")
+        }
+        const ID ="Islamabad"
+        if(ID!=="lahore")
+        {
+            console.log("not runned")
+        }
+    </script>
+</body>
+</html
